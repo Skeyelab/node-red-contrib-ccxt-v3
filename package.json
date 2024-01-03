@@ -24,7 +24,7 @@
     "ccxt": "^1.47.46"
   },
   "engines": {
-    "node": ">=14.0.0 <=16"
+    "node": ">=14.0.0 <=20"
   },
   "repository": {
     "type": "git",
