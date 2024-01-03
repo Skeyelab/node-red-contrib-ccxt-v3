@@ -380,43 +380,43 @@ module.exports = function (RED) {
 
   RED.httpAdmin.get(
     "/ccxt-v3/exchanges",
-    RED.auth.needsPermission("ccxt-api-v2.read"),
+    RED.auth.needsPermission("ccxt-api-v3.read"),
     callbackExchanges,
     errorHandler
   );
   RED.httpAdmin.get(
     "/ccxt-v3/exchangecaps",
-    RED.auth.needsPermission("ccxt-api-v2.read"),
+    RED.auth.needsPermission("ccxt-api-v3.read"),
     callbackExchangeCaps,
     errorHandler
   );
   RED.httpAdmin.get(
     "/ccxt-v3/apis",
-    RED.auth.needsPermission("ccxt-api-v2.read"),
+    RED.auth.needsPermission("ccxt-api-v3.read"),
     callbackApis,
     errorHandler
   );
   RED.httpAdmin.get(
     "/ccxt-v3/apiparams",
-    RED.auth.needsPermission("ccxt-api-v2.read"),
+    RED.auth.needsPermission("ccxt-api-v3.read"),
     callbackApiParams,
     errorHandler
   );
   RED.httpAdmin.get(
     "/ccxt-v3/exchangesymbols",
-    RED.auth.needsPermission("ccxt-api-v2.read"),
+    RED.auth.needsPermission("ccxt-api-v3.read"),
     callbackExchangeSymbols,
     errorHandler
   );
   RED.httpAdmin.get(
     "/ccxt-v3/fetchOHLCVTimeframes",
-    RED.auth.needsPermission("ccxt-api-v2.read"),
+    RED.auth.needsPermission("ccxt-api-v3.read"),
     callbackOHLCVTimeframes,
     errorHandler
   );
   RED.httpAdmin.get(
     "/ccxt-v3/exchangereqcreds",
-    RED.auth.needsPermission("ccxt-exchange-v2.read"),
+    RED.auth.needsPermission("ccxt-exchange-v3.read"),
     callbackExchangerequiredCredentials,
     errorHandler
   );
@@ -491,7 +491,7 @@ module.exports = function (RED) {
               if (exchangelist.length > 1)
                 RED.nodes.eachNode(function (n) {
                   // check if n is one you want
-                  if (n.type === "ccxt-exchange-v2")
+                  if (n.type === "ccxt-exchange-v3")
                     if (n.exchange === element)
                       if (n.defaultconfig === true) {
                         node.apisecrets = RED.nodes.getNode(n.id);
@@ -1064,7 +1064,7 @@ module.exports = function (RED) {
     });
   }
 
-  RED.nodes.registerType("ccxt-api-v2", CcxtApi);
+  RED.nodes.registerType("ccxt-api-v3", CcxtApi);
 
   //config node implementation
   function CcxtExchange(config) {
@@ -1075,7 +1075,7 @@ module.exports = function (RED) {
     this.sandboxmode = config.sandboxmode;
   }
 
-  RED.nodes.registerType("ccxt-exchange-v2", CcxtExchange, {
+  RED.nodes.registerType("ccxt-exchange-v3", CcxtExchange, {
     credentials: {
       apikey: {type: "text"},
       secret: {type: "text"},

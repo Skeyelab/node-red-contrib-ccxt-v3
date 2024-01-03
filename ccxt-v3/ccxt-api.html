@@ -25,7 +25,7 @@ SOFTWARE.
 
 -->
 
-<script type="text/html" data-template-name="ccxt-api-v2">
+<script type="text/html" data-template-name="ccxt-api-v3">
 
   <div class="form-row">
         <span
@@ -409,7 +409,7 @@ SOFTWARE.
 <script src="vendor/select2/select2.min.js"></script>
 -->
 <script type="text/javascript">
-  RED.nodes.registerType("ccxt-api-v2", {
+  RED.nodes.registerType("ccxt-api-v3", {
     category: "cryptocurrency",
     defaults: {
       name: {
@@ -516,7 +516,7 @@ SOFTWARE.
         value: ""
       },
       apisecrets: {
-        type: "ccxt-exchange-v2",
+        type: "ccxt-exchange-v3",
         required: false
       },
 
@@ -1643,7 +1643,7 @@ SOFTWARE.
   }
 </style>
 
-<script type="text/html" data-template-name="ccxt-exchange-v2">
+<script type="text/html" data-template-name="ccxt-exchange-v3">
   <div class="form-row">
       <label for="node-config-input-exchange" class="tooltip"
         ><i class="fa fa-exchange"></i> <span data-i18n="ccxt.label.exchange"></span>
@@ -1758,7 +1758,7 @@ SOFTWARE.
 </script>
 
 <script type="text/javascript">
-  RED.nodes.registerType("ccxt-exchange-v2", {
+  RED.nodes.registerType("ccxt-exchange-v3", {
     category: "config",
     defaults: {
       exchange: {
