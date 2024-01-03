@@ -1,7 +1,7 @@
 <!--
 Copyright (c) 2019 Islam El'ewady
-and other contributors, 
-https://github.com/nileio/node-red-contrib-ccxt-v2
+and other contributors,
+https://github.com/nileio/node-red-contrib-ccxt-v3
 
 Licensed under the MIT License (the "License");
 
@@ -36,10 +36,10 @@ SOFTWARE.
               id="id-anchor-display-exchange-img"
               style="max-width:68%;"/></a
         ></span>
-        
+
         <span
           ><img
-            src="resources/node-red-contrib-ccxt-v2/images/spinning-circles.svg"
+            src="resources/node-red-contrib-ccxt-v3/images/spinning-circles.svg"
             alt="retrieving data..."
             id="id-loading-svg"
             style="display:none;width:24px;"
@@ -213,7 +213,7 @@ SOFTWARE.
         />
         <input type="hidden" id="node-input-timeframeType" />
         <img
-          src="resources/node-red-contrib-ccxt-v2/images/emulated.svg"
+          src="resources/node-red-contrib-ccxt-v3/images/emulated.svg"
           alt="API is emulated"
           id="id-emulated-api"
           style="width:16px;"
@@ -598,7 +598,7 @@ SOFTWARE.
             value: "symbolList",
             label: "Pair",
             hasValue: true,
-            icon: "resources/node-red-contrib-ccxt-v2/images/typedInput/bitcoin-18.png",
+            icon: "resources/node-red-contrib-ccxt-v3/images/typedInput/bitcoin-18.png",
             options: ["None"]
           },
           {
@@ -622,7 +622,7 @@ SOFTWARE.
             value: "timeframeList",
             label: "Candle size",
             //  hasValue: true,
-            //icon: "resources/node-red-contrib-ccxt-v2/typedInput/timeline.png",
+            //icon: "resources/node-red-contrib-ccxt-v3/typedInput/timeline.png",
             //default list of values
             options: ["1m", "5m", "15m", "30m", "1h", "3h", "6h", "12h", "1d"]
           },
@@ -639,7 +639,7 @@ SOFTWARE.
           {
             value: "datepick",
             label: "Date",
-            icon: "resources/node-red-contrib-ccxt-v2/images/typedInput/date-from-18.png",
+            icon: "resources/node-red-contrib-ccxt-v3/images/typedInput/date-from-18.png",
             hasValue: true
           },
           "msg",
@@ -730,7 +730,7 @@ SOFTWARE.
         //show spinner
         $("#id-loading-svg").show();
         $.getJSON(
-          "ccxt-v2/exchangesymbols",
+          "ccxt-v3/exchangesymbols",
           {
             exchange: ex
           },
@@ -753,7 +753,7 @@ SOFTWARE.
         var exchangeElement = $("#node-input-exchange");
         //show spinner
         $("#id-loading-svg").show();
-        $.getJSON("ccxt-v2/exchanges", function (result) {
+        $.getJSON("ccxt-v3/exchanges", function (result) {
           exchangeElement.empty();
 
           $.each(result.exchange, function (key, value) {
@@ -813,7 +813,7 @@ SOFTWARE.
         $("#id-loading-svg").show();
 
         $.getJSON(
-          "ccxt-v2/exchangecaps",
+          "ccxt-v3/exchangecaps",
           {
             exchange: exchange
           },
@@ -866,7 +866,7 @@ SOFTWARE.
         //show spinner
         $("#id-loading-svg").show();
         $.getJSON(
-          "ccxt-v2/apis",
+          "ccxt-v3/apis",
           {
             exchange: exchange
           },
@@ -886,8 +886,8 @@ SOFTWARE.
                   //@nileio BUGFIX: $.each(object,function(key,value)) when passing object https://api.jquery.com/jquery.each/
                   $.each(result.api[apitype][verb], function (key, api) {
                     //console.log("index: " + index, " key: " + key, " verb: " + verb, " api: " + api);
-                    //@nileio quick and dirty workaround for the timebeing. every exchange seem to have different data structure coming here and swapped! 
-                    //server api "ccxt-v2/apis" should fix this instead of fixing here.
+                    //@nileio quick and dirty workaround for the timebeing. every exchange seem to have different data structure coming here and swapped!
+                    //server api "ccxt-v3/apis" should fix this instead of fixing here.
                     if (typeof key === 'string') api = key
                     var option = $("<option>", {
                       value: apitype + "_" + verb + "_" + api,
@@ -936,7 +936,7 @@ SOFTWARE.
         //show spinner
         $("#id-loading-svg").show();
         $.getJSON(
-          "ccxt-v2/fetchOHLCVTimeframes",
+          "ccxt-v3/fetchOHLCVTimeframes",
           {
             exchange: ex
           },
@@ -1137,7 +1137,7 @@ SOFTWARE.
         if (apitype === "unifiedAPI") {
           if (api !== undefined && api !== "") {
             $.getJSON(
-              "ccxt-v2/apiparams",
+              "ccxt-v3/apiparams",
               {
                 api: api
               },
@@ -1371,7 +1371,7 @@ SOFTWARE.
                     value: "timeframeList",
                     label: "Candle size",
                     //  hasValue: true,
-                    icon: "resources/node-red-contrib-ccxt-v2/images/typedInput/timeline.png",
+                    icon: "resources/node-red-contrib-ccxt-v3/images/typedInput/timeline.png",
                     options: timeframes
                   },
                   "str",
@@ -1814,7 +1814,7 @@ SOFTWARE.
         var exchangeElement = $("#node-config-input-exchange");
         //show spinner
         //$("#id-loading-svg").show();
-        $.getJSON("ccxt-v2/exchanges", function (result) {
+        $.getJSON("ccxt-v3/exchanges", function (result) {
           exchangeElement.empty();
           exchangeElement.append(
             $("<option>", {
@@ -1856,7 +1856,7 @@ SOFTWARE.
         let exchange = $("#node-config-input-exchange option:selected").val();
         if (exchange !== undefined && exchange !== "") {
           $.getJSON(
-            "ccxt-v2/exchangereqcreds",
+            "ccxt-v3/exchangereqcreds",
             {
               exchange: exchange
             },
@@ -1892,6 +1892,6 @@ SOFTWARE.
     }
   });
 
-//# sourceURL=/ccxt-v2/ccxt-api.html
-//# sourceMappingURL=/Users/islam/dev/node/node-red-contrib-ccxt-v2/ccxt-v2/ccxt-api.html.map
+//# sourceURL=/ccxt-v3/ccxt-api.html
+//# sourceMappingURL=/Users/islam/dev/node/node-red-contrib-ccxt-v3/ccxt-v3/ccxt-api.html.map
 </script>

@@ -1,4 +1,4 @@
-# node-red-contrib-ccxt-v2
+# node-red-contrib-ccxt-v3
 
 A Node-RED node to communicate with various crypto exchanges using [CCXT](https://github.com/ccxt/ccxt) library. The node now supports all Unified and Exchange-specific APIs.
 
@@ -24,12 +24,12 @@ This node package supports all APIs which are provided by latest version of CCXT
 Please check CCXT website for all supported exchanges.
 As of the latest release, there are **(133 Exchanges)** Crypto Exchanges supported from [CCXT](https://github.com/ccxt/ccxt) node-RED package.
 
-For the latest updates see the [CHANGELOG.md](https://github.com/nileio/node-red-contrib-ccxt-v2/blob/master/CHANGELOG.md)
+For the latest updates see the [CHANGELOG.md](https://github.com/nileio/node-red-contrib-ccxt-v3/blob/master/CHANGELOG.md)
 
 ## Installation Instructions
 
 ```
-npm install node-red-contrib-ccxt-v2 --save
+npm install node-red-contrib-ccxt-v3 --save
 ```
 
 ## CCXT node-RED Configuration

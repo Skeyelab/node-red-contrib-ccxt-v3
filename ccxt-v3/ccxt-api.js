@@ -379,43 +379,43 @@ module.exports = function (RED) {
   };
 
   RED.httpAdmin.get(
-    "/ccxt-v2/exchanges",
+    "/ccxt-v3/exchanges",
     RED.auth.needsPermission("ccxt-api-v2.read"),
     callbackExchanges,
     errorHandler
   );
   RED.httpAdmin.get(
-    "/ccxt-v2/exchangecaps",
+    "/ccxt-v3/exchangecaps",
     RED.auth.needsPermission("ccxt-api-v2.read"),
     callbackExchangeCaps,
     errorHandler
   );
   RED.httpAdmin.get(
-    "/ccxt-v2/apis",
+    "/ccxt-v3/apis",
     RED.auth.needsPermission("ccxt-api-v2.read"),
     callbackApis,
     errorHandler
   );
   RED.httpAdmin.get(
-    "/ccxt-v2/apiparams",
+    "/ccxt-v3/apiparams",
     RED.auth.needsPermission("ccxt-api-v2.read"),
     callbackApiParams,
     errorHandler
   );
   RED.httpAdmin.get(
-    "/ccxt-v2/exchangesymbols",
+    "/ccxt-v3/exchangesymbols",
     RED.auth.needsPermission("ccxt-api-v2.read"),
     callbackExchangeSymbols,
     errorHandler
   );
   RED.httpAdmin.get(
-    "/ccxt-v2/fetchOHLCVTimeframes",
+    "/ccxt-v3/fetchOHLCVTimeframes",
     RED.auth.needsPermission("ccxt-api-v2.read"),
     callbackOHLCVTimeframes,
     errorHandler
   );
   RED.httpAdmin.get(
-    "/ccxt-v2/exchangereqcreds",
+    "/ccxt-v3/exchangereqcreds",
     RED.auth.needsPermission("ccxt-exchange-v2.read"),
     callbackExchangerequiredCredentials,
     errorHandler
